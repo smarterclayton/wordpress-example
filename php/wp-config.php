@@ -44,7 +44,7 @@ define('DB_COLLATE', '');
  */
 
 // This is where we define the OpenShift specific secure variable functions
-require_once(ABSPATH . '../.openshift/openshift.inc');
+require_once(ABSPATH . '../../.openshift/openshift.inc');
 
 // Set the default keys to use
 $_default_keys = array(
@@ -122,8 +122,8 @@ define('WP_DEBUG', false);
  * Comment these lines out if you want to check your plugins and themes 
  * into source control.
  */
-define( 'WP_CONTENT_DIR', $_ENV['OPENSHIFT_DATA_DIR'] );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+#define( 'WP_CONTENT_DIR', $_ENV['OPENSHIFT_DATA_DIR'] . '/content' );
+#define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
 
 /* That's all, stop editing! Happy blogging. */
 

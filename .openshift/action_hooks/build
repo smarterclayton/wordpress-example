@@ -4,16 +4,20 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
-if [ ! -d $OPENSHIFT_DATA_DIR/uploads ]; then
-    mkdir $OPENSHIFT_DATA_DIR/uploads
+if [ ! -d $OPENSHIFT_DATA_DIR/content ]; then
+    mkdir $OPENSHIFT_DATA_DIR/content
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR/plugins ]; then
-    mkdir $OPENSHIFT_DATA_DIR/plugins
+if [ ! -d $OPENSHIFT_DATA_DIR/content/uploads ]; then
+    mkdir $OPENSHIFT_DATA_DIR/content/uploads
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR/themes ]; then
-    mkdir $OPENSHIFT_DATA_DIR/themes
+if [ ! -d $OPENSHIFT_DATA_DIR/content/plugins ]; then
+    mkdir $OPENSHIFT_DATA_DIR/content/plugins
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/content/themes ]; then
+    mkdir $OPENSHIFT_DATA_DIR/content/themes
 fi
 
 # Add multisite upload dir
@@ -21,5 +25,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/blogs.dir ]; then
     mkdir $OPENSHIFT_DATA_DIR/blogs.dir
 fi
 
-echo "<?php ?>" > $OPENSHIFT_DATA_DIR/plugins
-echo "<?php ?>" > $OPENSHIFT_DATA_DIR/themes
+echo "<?php ?>" > $OPENSHIFT_DATA_DIR/content/plugins
+echo "<?php ?>" > $OPENSHIFT_DATA_DIR/content/themes
+
+ln -s $OPENSHIFT_DATA_DIR/content $OPENSHIFT_REPO_DIR/php/wp/wp-content
