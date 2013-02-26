@@ -118,6 +118,13 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+/* 
+ * Comment these lines out if you want to check your plugins and themes 
+ * into source control.
+ */
+define( 'WP_CONTENT_DIR', $_ENV['OPENSHIFT_DATA_DIR'] );
+define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

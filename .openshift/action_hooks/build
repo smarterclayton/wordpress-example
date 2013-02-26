@@ -21,10 +21,5 @@ if [ ! -d $OPENSHIFT_DATA_DIR/blogs.dir ]; then
     mkdir $OPENSHIFT_DATA_DIR/blogs.dir
 fi
 
-ln -sf $OPENSHIFT_DATA_DIR/blogs.dir $OPENSHIFT_REPO_DIR/php/wp-content/
-ln -sf $OPENSHIFT_DATA_DIR/plugins $OPENSHIFT_REPO_DIR/php/wp-content/
-ln -sf $OPENSHIFT_DATA_DIR/themes $OPENSHIFT_REPO_DIR/php/wp-content/
-ln -sf $OPENSHIFT_DATA_DIR/uploads $OPENSHIFT_REPO_DIR/php/wp-content/
-
 echo "<?php ?>" > $OPENSHIFT_DATA_DIR/plugins
 echo "<?php ?>" > $OPENSHIFT_DATA_DIR/themes
